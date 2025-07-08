@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>FIRST KISS</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+      font-family: "Georgia", serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ffc0cb;
+      letter-spacing: 2px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+      background: #222;
+      color: #f0f0f0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffc0cb;
+      color: #000;
+      cursor: pointer;
+    }
+    #poema {
+      white-space: pre-wrap;
+      margin-top: 30px;
+      max-width: 700px;
+      display: none;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>FIRST KISS</h1>
+  <input type="password" id="senha" placeholder="Inserisci la password" />
+  <button onclick="verificarSenha()">Invia</button>
+
+  <div id="poema">
+ho visto certe presenze attraversare il tempo come se nulla potesse fermarle.
+tracce leggere rimangono dove prima c’era solo silenzio.
+ti accorgi del cambiamento solo quando l’aria smette di essere la stessa.
+persino il rumore della pioggia sembra raccontare qualcosa di antico.
+su certi pomeriggi, la luce cade in un modo che pare intenzionale.
+:
+/ una pausa, un respiro trattenuto dalla pagina a metà.
+/ dietro l’angolo, una curva che sa di déjà-vu.
+yogurt lasciato a metà su un tavolo dimenticato racconta l’abitudine.
+ora che il cielo cambia colore più in fretta, anche il tempo si fa domanda.
+un passo dopo l’altro, il pavimento scricchiola con più sincerità.
+tutto ciò che resta è l’eco delle cose non dette.
+un cane abbaia in lontananza — forse contro il vento, forse contro un ricordo.
+.
+bicchieri mezzi pieni e conversazioni spezzate: il quotidiano sa essere mistero.
+e le ombre, più lunghe d’inverno, non sempre seguono i nostri piedi.
+/ restano sospese, come se aspettassero un segnale.
+mentre la città continua, qualcuno si ferma a osservare un dettaglio.
+Certe lettere trovate in vecchi cassetti non vogliono essere lette.
+hanno l’odore di qualcosa che si è perso con garbo.
+mani fredde, ma non per il clima: certi inverni iniziano dentro.
+whisper lontani attraversano muri sottili come carta.
+you non always see what matters — ma a volte lo senti.
+5 passi indietro e tutto sembra più chiaro, o solo più lontano.
+Una finestra aperta senza motivo diventa profezia.
+Ha senso chiedersi se era sogno o memoria?
+Waiting è un’arte che pochi sanno nominare senza spezzarsi.
+keywords dimenticate in un vecchio diario — eppure ancora vive.
+  </div>
+
+  <script>
+    // Senha "07/06/2025" codificada em Base64
+    const senhaCorretaBase64 = "MDcvMDYvMjAyNQ==";
+
+    function verificarSenha() {
+      const senhaDigitada = document.getElementById("senha").value;
+      const senhaDecodificada = atob(senhaCorretaBase64);
+      if (senhaDigitada === senhaDecodificada) {
+        document.getElementById("poema").style.display = "block";
+      } else {
+        alert("Password errata. Riprova.");
+      }
+    }
+  </script>
+</body>
+</html>
